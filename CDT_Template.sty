@@ -1,0 +1,68 @@
+% Remove the navigation bar
+\setbeamertemplate{navigation symbols}{}
+
+% Includes for frame package
+\usepackage{framed,color}
+\definecolor{shadecolor}{rgb}{0.5,0.5,0.5}
+
+\definecolor{myblue}{RGB}{0,47,95}
+\setbeamercolor*{structure}{bg=myblue!20,fg=myblue}
+
+\setbeamercolor*{palette primary}{use=structure,fg=white,bg=structure.fg}
+\setbeamercolor*{palette secondary}{use=structure,fg=white,bg=structure.fg!75}
+\setbeamercolor*{palette tertiary}{use=structure,fg=white,bg=black}
+\setbeamercolor*{palette quaternary}{fg=white,bg=black}
+
+% Define new environments for mdframed package
+\usepackage{tikz}
+\usepackage[framemethod=tikz]{mdframed}
+
+
+\newmdenv[tikzsetting={draw=black,fill=white,fill opacity=0.7, line width=4pt},backgroundcolor=none,leftmargin=0,
+rightmargin=0,innertopmargin=4pt,skipbelow=\baselineskip,%
+skipabove=\baselineskip]{TitleBox}
+%http://tex.stackexchange.com/questions/38281/transparent-background-for-mdframed-environment
+
+
+
+\defbeamertemplate*{title page}{customized}[1][]
+{
+%	\begin{picture}(0,0)
+	
+	
+%	\put(0,-200.7){%
+	%	\begin{minipage}[b][45mm][t]{180mm}
+	\tikz[remember picture,overlay] \node[opacity=0.9,inner sep=0pt, yshift = 1 cm] at (current page.center){\includegraphics[width=\paperwidth,height=\paperheight]{bgimg.jpg}};
+	\vspace{3cm}
+	\begin{TitleBox}
+	\usebeamerfont{title}\inserttitle\par
+	\usebeamerfont{subtitle}\usebeamercolor[fg]{subtitle}\insertsubtitle\par
+	\usebeamerfont{author}\insertauthor\par
+	\usebeamerfont{institute}\insertinstitute\par
+	\usebeamerfont{date}\insertdate\par
+	\end{TitleBox}
+	%	\end{minipage}
+%}
+	
+%	\end{picture}
+	
+	
+}
+
+
+\mode<presentation>
+
+\usepackage[scaled=0.86]{helvet}         % Helvetica (Nimbus Sans L) as the sans-serif font
+
+
+\setbeamerfont{title}     {size=\huge}
+\setbeamerfont{subtitle}  {size=\Large}
+\setbeamerfont{frametitle}{size=\LARGE}
+
+\setbeamerfont{author}{size=\Large}
+\setbeamerfont{institute}{size=\normalsize}
+
+\setbeamerfont{frame number in head}{size=\scriptsize}
+\setbeamerfont{frame number in foot}{size=\scriptsize}
+
+\mode<all>

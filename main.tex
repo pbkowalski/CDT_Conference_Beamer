@@ -1,0 +1,48 @@
+\documentclass[aspectratio=169]{beamer}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{CDT_Template}
+\usepackage{graphicx}
+\usepackage{default}
+
+%Global Background must be put in preamble
+\usebackgroundtemplate%
+{%
+	\includegraphics[width=\paperwidth,height=\paperheight]{p02.pdf}%
+}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\title[Short Title]{Title of Presentation}
+\subtitle{Subtitle}
+\author{Name of Speaker}
+\institute{Job Title or Affiliation}
+\date{Date of Presentation}
+%\bigskip
+
+
+\begin{document}
+	
+	
+{
+\usebackgroundtemplate{\includegraphics[width=\paperwidth]{p01.pdf}}%
+\begin{frame}
+\end{frame}
+}
+\titlepage
+
+\begin{frame}{Summary}
+\begin{itemize}
+\item 1
+\item 2
+\item 3
+\end{itemize}
+\end{frame}
+
+
+{
+	\usebackgroundtemplate{\includegraphics[width=\paperwidth]{p01.pdf}}%
+	\begin{frame}
+\end{frame}
+}
+
+\end{document}
